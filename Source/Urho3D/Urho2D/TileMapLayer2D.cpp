@@ -253,7 +253,7 @@ unsigned TileMapLayer2D::GetNumObjects() const
     return objectGroup_->GetNumObjects();
 }
 
-TileMapObject2D* TileMapLayer2D::GetObject(unsigned index) const
+TileMapObject2D* TileMapLayer2D::GetObjectEntry(unsigned index) const
 {
     if (!objectGroup_)
         return 0;

@@ -38,7 +38,8 @@ enum Orientation2D
     /// Isometric.
     O_ISOMETRIC,
     /// Staggered.
-    O_STAGGERED
+    O_STAGGERED,
+    O_HEXAGONAL
 };
 
 /// Tile map information.

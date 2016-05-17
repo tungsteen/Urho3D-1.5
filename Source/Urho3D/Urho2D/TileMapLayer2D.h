@@ -90,7 +90,7 @@ public:
     /// Return number of tile map objects (for object group only).
     unsigned GetNumObjects() const;
     /// Return tile map object (for object group only).
-    TileMapObject2D* GetObject(unsigned index) const;
+    TileMapObject2D* GetObjectEntry(unsigned index) const;
     /// Return object node (for object group only).
     Node* GetObjectNode(unsigned index) const;
 

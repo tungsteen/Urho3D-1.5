@@ -384,7 +384,9 @@ bool TmxFile2D::EndLoad()
     else if (orientation == "isometric")
         info_.orientation_ = O_ISOMETRIC;
     else if (orientation == "staggered")
-        info_.orientation_ = O_STAGGERED;
+      info_.orientation_ = O_STAGGERED;
+    else if (orientation == "hexagonal")
+      info_.orientation_ = O_HEXAGONAL;
     else
     {
         URHO3D_LOGERROR("Unsupported orientation type " + orientation);
