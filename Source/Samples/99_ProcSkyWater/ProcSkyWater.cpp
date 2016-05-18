@@ -72,6 +72,9 @@ void ProcSkyWater::Start()
     // Setup the viewport for displaying the scene
     SetupViewport();
 
+	// Use viewport 0, therefore shall be start after SetupViewport
+	procSky_->Initialize();
+
     // Hook up to the frame update event
     SubscribeToEvents();
 }
@@ -115,10 +118,6 @@ void ProcSkyWater::CreateScene()
     //skybox->SetModel(cache->GetResource<Model>("Models/Box.mdl"));
     //skybox->SetMaterial(cache->GetResource<Material>("Materials/Skybox.xml"));
 	procSky_ = skyNode->CreateComponent<ProcSky>();
-	if (procSky_)
-	{
-		procSky_->Initialize();
-	}	
 
     // Create heightmap terrain
     Node* terrainNode = scene_->CreateChild("Terrain");
