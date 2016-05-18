@@ -41,6 +41,8 @@ void RegisterResourceAPI(asIScriptEngine* engine);
 void RegisterSceneAPI(asIScriptEngine* engine);
 /// Register the Graphics library to script.
 void RegisterGraphicsAPI(asIScriptEngine* engine);
+
+void RegisterProcSkyAPI(asIScriptEngine* engine);
 /// Register the Input library to script.
 void RegisterInputAPI(asIScriptEngine* engine);
 /// Register the Audio library to script.
@@ -73,5 +75,4 @@ void RegisterScriptInterfaceAPI(asIScriptEngine* engine);
 void RegisterScriptAPI(asIScriptEngine* engine);
 /// Register the Engine library to script.
 void RegisterEngineAPI(asIScriptEngine* engine);
-
 }

@@ -23,11 +23,12 @@
   THE SOFTWARE.
 */
 
-#include "../Graphics/ProcSky.h"
 #include "APITemplates.h"
-//#include <Angelscript/angelscript.h>
 
-using namespace Urho3D;
+#include "../Graphics/ProcSky.h"
+
+namespace Urho3D
+{
 
 static ProcSky* GetProcSky() {
   return GetScriptContext()->GetSubsystem<ProcSky>();
@@ -50,4 +51,6 @@ static void RegisterProcSky(asIScriptEngine* engine) {
 
 void RegisterProcSkyAPI(asIScriptEngine* engine) {
   RegisterProcSky(engine);
+}
+
 }

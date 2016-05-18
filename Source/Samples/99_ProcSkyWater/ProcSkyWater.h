@@ -41,7 +41,7 @@ class Scene;
 ///     - Setting up a second camera to render reflections on the water surface
 class ProcSkyWater : public Sample
 {
-    URHO3D_OBJECT(ProcSkyWater, Sample);
+    URHO3D_OBJECT(ProcSkyWater, Sample)
 
 public:
     /// Construct.
@@ -63,8 +63,11 @@ private:
     void MoveCamera(float timeStep);
     /// Handle the logic update event.
     void HandleUpdate(StringHash eventType, VariantMap& eventData);
+    /// Create cursor
+    void CreateCursor();
 
-	SharedPtr<ProcSky> procSky_;
+    /// ProcSky
+    SharedPtr<ProcSky> procSky_;
 
     /// Reflection camera scene node.
     SharedPtr<Node> reflectionCameraNode_;

@@ -55,13 +55,16 @@ URHO3D_DEFINE_APPLICATION_MAIN(ProcSkyWater)
 ProcSkyWater::ProcSkyWater(Context* context) :
     Sample(context)
 {
-	ProcSky::RegisterObject(context);
+    ProcSky::RegisterObject(context);
 }
 
 void ProcSkyWater::Start()
 {
     // Execute base class startup
     Sample::Start();
+
+    // Create cursor
+    CreateCursor();
 
     // Create the scene content
     CreateScene();
@@ -72,8 +75,8 @@ void ProcSkyWater::Start()
     // Setup the viewport for displaying the scene
     SetupViewport();
 
-	// Use viewport 0, therefore shall be start after SetupViewport
-	procSky_->Initialize();
+    // Use viewport 0, therefore shall be start after SetupViewport
+    procSky_->Initialize();
 
     // Hook up to the frame update event
     SubscribeToEvents();
@@ -117,7 +120,7 @@ void ProcSkyWater::CreateScene()
     //Skybox* skybox = skyNode->CreateComponent<Skybox>();
     //skybox->SetModel(cache->GetResource<Model>("Models/Box.mdl"));
     //skybox->SetMaterial(cache->GetResource<Material>("Materials/Skybox.xml"));
-	procSky_ = skyNode->CreateComponent<ProcSky>();
+    procSky_ = skyNode->CreateComponent<ProcSky>();
 
     // Create heightmap terrain
     Node* terrainNode = scene_->CreateChild("Terrain");
@@ -258,7 +261,10 @@ void ProcSkyWater::MoveCamera(float timeStep)
     pitch_ = Clamp(pitch_, -90.0f, 90.0f);
 
     // Construct new orientation for the camera scene node from yaw and pitch. Roll is fixed to zero
-    cameraNode_->SetRotation(Quaternion(pitch_, yaw_, 0.0f));
+    if ( input->GetMouseButtonDown( MOUSEB_RIGHT ) )
+    {
+      cameraNode_->SetRotation(Quaternion(pitch_, yaw_, 0.0f));
+    }
 
     // Read WASD keys and move the camera scene node to the corresponding direction if they are pressed
     if (input->GetKeyDown('W'))
@@ -285,4 +291,14 @@ void ProcSkyWater::HandleUpdate(StringHash eventType, VariantMap& eventData)
 
     // Move the camera, scale movement with time step
     MoveCamera(timeStep);
+}
+
+void ProcSkyWater::CreateCursor()
+{
+  UI* ui = GetSubsystem<UI>();
+  SharedPtr<Cursor> cursor( new Cursor( context_ ) );
+  XMLFile* styleXML = GetSubsystem<ResourceCache>()->GetResource<XMLFile> ( "UI/DefaultStyle.xml" );
+  cursor->SetStyleAuto( styleXML );
+  ui->SetCursor( cursor );
+  GetSubsystem<Input>()->SetMouseVisible( true );
 }
