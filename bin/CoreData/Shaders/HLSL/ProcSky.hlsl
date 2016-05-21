@@ -101,7 +101,6 @@ float3 Absorb( float dist, float3 color, float factor )
 void PS( float2 iPos: TEXCOORD0, out float4 oColor : OUTCOLOR0 )
 {
   float3 lightDir = cLightDir;
-  lightDir.z *= -1.0; // Invert world Z for Urho.
   float3 eyeDir = GetWorldNormal( iPos );
   float alpha = clamp( dot( eyeDir, lightDir ), 0, 1 );
   float rayleighFactor = Phase( alpha, -0.01 ) * cRayleighBrightness;

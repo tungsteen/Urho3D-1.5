@@ -109,7 +109,7 @@ void PS() {
   vec3 lightDir = cLightDir;
   lightDir.z *= -1.0; // Invert world Z for Urho.
   vec3 eyeDir = GetWorldNormal();
-  float alpha = clamp(dot(eyeDir, lightDir), 0, 1);
+  float alpha = clamp(dot(eyeDir, lightDir), 0.0, 1.0);
   float rayleighFactor = Phase(alpha, -0.01) * cRayleighBrightness;
   float mieFactor = Phase(alpha, cMieDistribution) * cMieBrightness;
   float spot = smoothstep(0.0, 15.0, Phase(alpha, 0.9995)) * cSpotBrightness;
