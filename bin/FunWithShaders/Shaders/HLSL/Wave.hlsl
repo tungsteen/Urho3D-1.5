@@ -15,7 +15,7 @@ void VS(float4 iPos : POSITION,
 	matrix<float, 3, 3> yRotate = { cos(time), 0.0, sin(time), 0.0, 1.0, 0.0, -sin(time), 0.0, cos(time)};
 	matrix<float, 3, 3> zRotate = { cos(time), -sin(time), 0.0, sin(time), cos(time), 0.0, 0.0, 0.0, 1.0};
 	
-	float3 rotWorldPos = mul(yRotate, worldPos);
+	float3 rotWorldPos = mul(xRotate, worldPos);
     oPos = GetClipPos(rotWorldPos);
 	
     oTexCoord = iTexCoord;

@@ -1,0 +1,4 @@
+<technique vs="Wave" ps="Wave">
+    <pass name="base" />
+    <pass name="light" depthtest="equal" depthwrite="false" blend="add" />
+</technique>
