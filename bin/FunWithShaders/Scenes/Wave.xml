@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<scene id="1">
+	<attribute name="Name" value="" />
+	<attribute name="Time Scale" value="1" />
+	<attribute name="Smoothing Constant" value="50" />
+	<attribute name="Snap Threshold" value="5" />
+	<attribute name="Elapsed Time" value="264.323" />
+	<attribute name="Next Replicated Node ID" value="1" />
+	<attribute name="Next Replicated Component ID" value="4" />
+	<attribute name="Next Local Node ID" value="16777356" />
+	<attribute name="Next Local Component ID" value="16778862" />
+	<attribute name="Variables" />
+	<attribute name="Variable Names" value="" />
+	<component type="Octree" id="1" />
+	<component type="DebugRenderer" id="2" />
+	<component type="PhysicsWorld" id="3" />
+	<node id="16777218">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Plane" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="2 1 1" />
+		<attribute name="Variables" />
+		<component type="StaticModel" id="16777229">
+			<attribute name="Model" value="Model;Models/Grid.mdl" />
+			<attribute name="Material" value="Material;Materials/WaveMaterial.xml" />
+		</component>
+		<component type="RigidBody" id="16778535" />
+		<component type="CollisionShape" id="16778548">
+			<attribute name="Shape Type" value="ConvexHull" />
+			<attribute name="Size" value="0.5 0.1 1" />
+			<attribute name="Model" value="Model;Models/Grid.mdl" />
+			<attribute name="Collision Margin" value="0.001" />
+		</component>
+	</node>
+	<node id="16777250">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Light" />
+		<attribute name="Position" value="0 0.647383 -1.14305" />
+		<attribute name="Rotation" value="0.978473 0.206372 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Light" id="16777602">
+			<attribute name="Light Type" value="Directional" />
+		</component>
+	</node>
+	<node id="16777300">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="Box" />
+		<attribute name="Position" value="0 1.18713 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="StaticModel" id="16778192">
+			<attribute name="Model" value="Model;Models/Box.mdl" />
+			<attribute name="Material" value="Material;" />
+		</component>
+		<component type="RigidBody" id="16778217">
+			<attribute name="Physics Position" value="0 1.18713 0" />
+			<attribute name="Mass" value="1" />
+			<attribute name="Friction" value="0.75" />
+			<attribute name="Collision Event Mode" value="Always" />
+		</component>
+		<component type="CollisionShape" id="16778573" />
+	</node>
+</scene>
