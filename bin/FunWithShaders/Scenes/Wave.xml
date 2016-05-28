@@ -25,9 +25,11 @@
 			<attribute name="Model" value="Model;Models/Grid.mdl" />
 			<attribute name="Material" value="Material;Materials/WaveMaterial.xml" />
 		</component>
-		<component type="RigidBody" id="16778535" />
+		<component type="RigidBody" id="16778535">
+			<attribute name="Physics Rotation" value="1 0 0 0" />
+		</component>
 		<component type="CollisionShape" id="16778548">
-			<attribute name="Shape Type" value="ConvexHull" />
+			<attribute name="Shape Type" value="StaticPlane" />
 			<attribute name="Size" value="0.5 0.1 1" />
 			<attribute name="Model" value="Model;Models/Grid.mdl" />
 			<attribute name="Collision Margin" value="0.001" />
@@ -56,6 +58,7 @@
 			<attribute name="Material" value="Material;" />
 		</component>
 		<component type="RigidBody" id="16778217">
+			<attribute name="Physics Rotation" value="1 0 0 0" />
 			<attribute name="Physics Position" value="0 1.18713 0" />
 			<attribute name="Mass" value="1" />
 			<attribute name="Friction" value="0.75" />

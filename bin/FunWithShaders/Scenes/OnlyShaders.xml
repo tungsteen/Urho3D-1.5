@@ -22,7 +22,7 @@
 		<attribute name="Variables" />
 		<component type="StaticModel" id="16777229">
 			<attribute name="Model" value="Model;Models/Box.mdl" />
-			<attribute name="Material" value="Material;Materials/OutlineMaterial.xml" />
+			<attribute name="Material" value="Material;Materials/RotateMaterial.xml" />
 		</component>
 	</node>
 	<node id="16777250">
