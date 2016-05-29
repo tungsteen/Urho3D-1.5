@@ -76,9 +76,9 @@ void VS(float4 iPos : POSITION,
 
     float time = cElapsedTime;
     matrix<float, 3, 3> yRotate = { cos(time), 0.0, sin(time), 0.0, 1.0, 0.0, -sin(time), 0.0, cos(time)};
-    modelMatrix._00_10_20 = mul(yRotate, modelMatrix._00_10_20);
-    modelMatrix._01_11_21 = mul(yRotate, modelMatrix._01_11_21);
-    modelMatrix._02_12_22 = mul(yRotate, modelMatrix._02_12_22);
+    modelMatrix._11_21_31 = mul(yRotate, modelMatrix._11_21_31);
+    modelMatrix._12_22_32 = mul(yRotate, modelMatrix._12_22_32);
+    modelMatrix._13_23_33 = mul(yRotate, modelMatrix._13_23_33);
 
     float3 worldPos = GetWorldPos(modelMatrix);
     oPos = GetClipPos(worldPos);
